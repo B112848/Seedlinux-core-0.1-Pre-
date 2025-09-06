@@ -1,32 +1,15 @@
-# SeedLinux
+# SeedLinux-core
 
 SeedLinux is a homebrew minimal Linux distribution. You can use initramfs, custom init, BusyBox, or your own commands for a lightweight and experimental OS experience.
 
 ## Version
-SeedLinux v1.0
+SeedLinux-core-ver0.1 (Pre)
 
 ## Features
--Linux kernel 6.6
+-Linux kernel 6.0.1
 - own init script
-- Can be booted with QEMU
 - Available with or without BusyBox mode
 
-## How to start (QEMU)
-
-```bash
-qemu-system-x86_64\
-  -kernel ./bzImage \
-  -initrd ./initramfs.cpio.gz \
-  -append "console=ttyS0" \
-  -nographic
-```
-
-or
-
-```bash
-./run.sh
-```
-  
 ## About license and source code
 
 This OS uses BusyBox (GPL v2).  
