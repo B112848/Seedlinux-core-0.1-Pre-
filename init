@@ -1,16 +1,32 @@
 #!/bin/sh
 
+hostname Seedlinux
+mount -t proc none /proc
+
+echo -e "===================="
+echo -e "|Seedlinux-core v1.0|"
+echo -e "===================="
+
+echo "  _________                 .___.__  .__                     "
+echo " /   _____/ ____   ____   __| _/|  | |__| ____  __ _____  ___"
+echo " \_____  \_/ __ \_/ __ \ / __ | |  | |  |/    \|  |  \  \/  /"
+echo " /        \  ___/\  ___// /_/ | |  |_|  |   |  \  |  />    < "
+echo "/_______  /\___  >\___  >____ | |____/__|___|  /____//__/\_ \\"
+echo "        \/     \/     \/     \/              \/            \/"
+
+printf "Type 'help' to see the list of supported commands." 
 while true; do
-    echo "pass:" 
-    read inp
-    if [ $inp = "root" ]; then
+    printf "Sheedlinux>"
+    read shell
+    if [ $shell = "help" ]; then
+        echo "Supported command:help sh exit date"      
+    elif [ $shell = "sh" ]; then
+        sh
+    elif [ $shell = "exit" ]; then
         break
-    else 
-        echo "Password is incorrect."
-    continue
+    elif [ $shell = "date" ]; then
+        TZ='UTC-8' date "+%Y/%m/%d"
+    else
+        echo "$shell is unknown commands."
     fi
 done
-
-echo "Welcome to Seedlinux Core ver0.1.1"
-echo "Welcome to the seedlinux-core"
-sh
