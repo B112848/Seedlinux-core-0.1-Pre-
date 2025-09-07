@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while true; do
+    echo "pass:" 
+    read inp
+    if [ $inp = "root" ]; then
+        break
+    else 
+        echo "Password is incorrect."
+    continue
+    fi
+done
+
+echo "Welcome to Seedlinux Core ver0.1.1"
+echo "Welcome to the seedlinux-core"
+sh
